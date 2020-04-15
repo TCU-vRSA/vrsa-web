@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="official-line">
     <Contents :content="content" />
   </div>
 </template>
@@ -11,10 +11,14 @@ export default {
     Contents,
   },
   async asyncData({ app }) {
-    const response = await app.$axios.$get('https://api.tcu-vrsa.net/pages/1');
+    const response = await app.$axios.$get('https://api.tcu-vrsa.net/pages/5');
     return {
       content: response
     };
   }
 }
 </script>
+
+<style>
+
+</style>

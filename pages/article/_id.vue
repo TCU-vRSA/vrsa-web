@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="article">
     <Contents :content="content" />
   </div>
 </template>
@@ -10,11 +10,15 @@ export default {
   components: {
     Contents,
   },
-  async asyncData({ app }) {
-    const response = await app.$axios.$get('https://api.tcu-vrsa.net/pages/1');
+  async asyncData({ app, params }) {
+    const response = await app.$axios.$get(`https://api.tcu-vrsa.net/articles/${params.id}`);
     return {
       content: response
     };
   }
 }
 </script>
+
+<style>
+
+</style>
