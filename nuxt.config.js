@@ -56,6 +56,12 @@ export default {
   */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    defaultAssets: {
+      icons: 'mdi'
+    },
+    icons: {
+      iconfont: 'mdi',
+    },
     theme: {
       dark: false,
       themes: {
@@ -69,7 +75,7 @@ export default {
           success: colors.green.accent3
         }
       }
-    }
+    },
   },
   /*
   ** Build configuration
