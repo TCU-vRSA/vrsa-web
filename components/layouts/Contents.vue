@@ -1,17 +1,37 @@
 <template>
-  <div v-html="$md.render(text)" />
+  <div class="contents">
+    <div class="snsbtn">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div class="line-it-button" data-lang="ja" data-type="share-a" data-ver="3" :data-url="getUrl()" data-color="default" data-size="small" data-count="true" style="display: none;"></div>
+      <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+    </div>
+    <div v-html="$md.render(text)" />
+  </div>
 </template>
 
 <script>
 export default {
   props: [
     'text',
-  ]
+  ],
+  methods: {
+    getUrl: function() {
+      return `https://tcu-vrsa.net${this.$route.path}`
+    }
+  }
 
 }
 </script>
 
 <style>
+.contents {
+  padding: 0 1rem;
+  line-height: 200%;
+}
+.snsbtn {
+  text-align: center;
+  margin-top: 30px;
+}
 h2 {
   font-weight: 600;
   font-size: 1.5rem;
