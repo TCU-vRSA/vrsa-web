@@ -44,6 +44,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
+    ['@nuxtjs/moment', ['ja']],
   ],
   /*
   ** Axios module configuration
