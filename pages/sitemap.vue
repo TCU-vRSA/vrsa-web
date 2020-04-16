@@ -6,7 +6,8 @@
         <v-subheader>記事一覧</v-subheader>
         <v-list-item v-for="(item, i) in content" :key="i" router :to="getUrl(item.id)">
           <v-list-item-content>
-            <v-list-item-title v-text="item.title"></v-list-item-title>
+            <v-list-item-title>{{item.title}}</v-list-item-title>
+            <v-list-item-subtitle>{{'https://tcu-vrsa.net/article/' + item.id}}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list>
