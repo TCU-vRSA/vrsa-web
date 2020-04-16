@@ -32,6 +32,7 @@ export default {
 .contents {
   padding: 0 1rem;
   line-height: 200%;
+  margin-bottom: 100px;
 }
 .snsbtn {
   text-align: center;
