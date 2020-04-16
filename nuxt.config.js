@@ -38,6 +38,7 @@ export default {
   */
   buildModules: [
     '@nuxtjs/vuetify',
+    '@nuxtjs/google-analytics',
   ],
   /*
   ** Nuxt.js modules
@@ -88,6 +89,9 @@ export default {
       }
     },
   },
+  googleAnalytics: {
+    id: 'UA-163819136-1',
+  },
   /*
   ** Build configuration
   */
@@ -97,5 +101,8 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  generate: {
+    fallback: true,
   }
 }
