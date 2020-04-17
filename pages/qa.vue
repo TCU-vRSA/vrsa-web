@@ -1,7 +1,17 @@
 <template>
   <div class="qa">
     <Contents :content="content" />
-    <div class="questions-wrapper" v-for="(item,i) in questions" :key="i">
+    <div class="filter-wrapper">
+      <v-row align="center">
+        <v-col class="d-flex" cols="12" sm="6">
+          <v-select :items="category" label="質問カテゴリ" v-model="currentlyCategory" @change="changeCategory($event)" ></v-select>
+        </v-col>
+        <v-col class="d-flex" cols="12" sm="6">
+          <v-select :items="author" label="回答者" v-model="currentlyAuthor" @change="changeAuthor($event)" />
+        </v-col>
+      </v-row>
+    </div>
+    <div class="questions-wrapper" v-for="(item,i) in displayQuestions" :key="i">
       <QuestionBox :item="item" />
     </div>
   </div>
@@ -33,8 +43,60 @@ export default {
   },
   data() {
     return {
-      show: null,
+      author: [
+        'すべて',
+        'YC教育支援センター',
+        'SC学生団体連合会本部',
+      ],
+      category: [
+        'すべて',
+        '⼊学前準備関係',
+        '履修関係',
+        '資格関係',
+        '証明書関係',
+        '留学プログラム',
+        '用具関係',
+        '学生生活',
+        'サークル関係'
+      ],
+      currentlyAuthor: null,
+      currentlyCategory: null,
+      displayQuestions: [],
     }
+  },
+  methods: {
+    changeAuthor: function(e) {
+      if(this.currentlyCategory === null){ // authorを変更した時、categoryがnullだったらcategoryも全てに変更する
+        this.currentlyCategory = 'すべて';
+      }
+
+      if(e === 'すべて') { // authorがすべてに変更されたら、表示される配列にすべてブチ込む
+        this.displayQuestions = this.questions;
+      }
+      else { // authorがすべて以外のときは、変更された値のauthorのものをとってくる
+        this.displayQuestions = this.questions.filter(i => i.author === e);
+      };
+
+      if(this.currentlyCategory !== 'すべて') { // ここからカテゴリの絞り込み処理。カテゴリがすべて以外だったら現在選択されているカテゴリのものに絞り込む
+        const self = this;
+        this.displayQuestions = this.displayQuestions.filter(i => i.category === self.currentlyCategory);
+      }
+    },
+    changeCategory: function(e) {
+      if(this.currentlyAuthor === null) {
+        this.currentlyAuthor = 'すべて';
+      }
+      if(e === 'すべて') {
+        this.displayQuestions = this.questions;
+      }
+      else {
+        this.displayQuestions = this.questions.filter(i => i.category === e);
+      };
+      if(this.currentlyAuthor !== 'すべて') {
+        const self = this;
+        this.displayQuestions = this.displayQuestions.filter(i => i.author === self.currentlyAuthor);
+      }
+    },
   },
   async asyncData({ app }) {
     const info = await app.$axios.$get('https://api.tcu-vrsa.net/pages/4');
