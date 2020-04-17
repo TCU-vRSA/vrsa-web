@@ -1,11 +1,15 @@
 <template>
   <div class="qa">
     <Contents :content="content" />
+    <div class="questions-wrapper" v-for="(item,i) in questions" :key="i">
+      <QuestionBox :item="item" />
+    </div>
   </div>
 </template>
 
 <script>
 import Contents from '~/components/layouts/Contents.vue';
+import QuestionBox from '~/components/layouts/QuestionBox.vue';
 export default {
   head() {
     return {
@@ -25,11 +29,19 @@ export default {
   },
   components: {
     Contents,
+    QuestionBox,
+  },
+  data() {
+    return {
+      show: null,
+    }
   },
   async asyncData({ app }) {
-    const response = await app.$axios.$get('https://api.tcu-vrsa.net/pages/4');
+    const info = await app.$axios.$get('https://api.tcu-vrsa.net/pages/4');
+    const qaData = await app.$axios.$get('https://api.tcu-vrsa.net/questions'); 
     return {
-      content: response
+      content: info,
+      questions: qaData
     };
   }
 }
