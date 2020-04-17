@@ -13,7 +13,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: '東京都市大学非公認・リモート学生アシスタントチーム「vRSA」の公式Webサイトです。今年度前期は、新型コロナウイルス感染症の影響により様々なイベントが中止となり、講義もオンラインで行うという動きが出てきました。しかし、学生の中でもオンラインに抵抗感をもつ方や、PCなどの機器の操作に不安がある方が多くいらっしゃると思います。そこで、私たちはリモートで学生をサポートする有志の団体「vRSA」を立ち上げました。今後、このWebサイトで情報発信を行っていく他、公式LINEアカウントを使って、学生一人ひとりに対しサポートしていく予定です。' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -99,7 +99,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   },
   generate: {
