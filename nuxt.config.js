@@ -13,7 +13,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '東京都市大学非公認・リモート学生アシスタントチーム「vRSA」の公式Webサイトです。今年度前期は、新型コロナウイルス感染症の影響により様々なイベントが中止となり、講義もオンラインで行うという動きが出てきました。しかし、学生の中でもオンラインに抵抗感をもつ方や、PCなどの機器の操作に不安がある方が多くいらっしゃると思います。そこで、私たちはリモートで学生をサポートする有志の団体「vRSA」を立ち上げました。今後、このWebサイトで情報発信を行っていく他、公式LINEアカウントを使って、学生一人ひとりに対しサポートしていく予定です。' }
+      { hid: 'description', name: 'description', content: '東京都市大学非公認・リモート学生アシスタントチーム「vRSA」の公式Webサイトです。今年度前期は、新型コロナウイルス感染症の影響により様々なイベントが中止となり、講義もオンラインで行うという動きが出てきました。しかし、学生の中でもオンラインに抵抗感をもつ方や、PCなどの機器の操作に不安がある方が多くいらっしゃると思います。そこで、私たちはリモートで学生をサポートする有志の団体「vRSA」を立ち上げました。今後、このWebサイトで情報発信を行っていく他、公式LINEアカウントを使って、学生一人ひとりに対しサポートしていく予定です。' },
+      { hid: 'og:description', name: 'og:description', content: '東京都市大学非公認・リモート学生アシスタントチーム「vRSA」の公式Webサイトです。' },
+      { hid: 'og:image', property: 'og:image', content: 'https://tcu-vrsa.net/img/ogp.png' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'TCU vRSA - 都市大非公認学生リモートサポートチーム' },
+      { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
