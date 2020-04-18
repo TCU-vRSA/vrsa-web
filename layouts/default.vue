@@ -50,7 +50,7 @@ export default {
         { icon: "mdi-home", title: "トップページ", to: "/" },
         { icon: "mdi-laptop", title: "オンライン講義情報", to: "/online" },
         { icon: "mdi-apps", title: "サークル情報", to: "/club" },
-        { icon: "mdi-reply", title: "よくあるQ&A", to: "/qa" },
+        { icon: "mdi-reply", title: "Q&Aまとめ", to: "/qa" },
         { icon: "mdi-mail", title: "公式LINE", to: "/line" },
         { icon: "mdi-contacts", title: "お問い合わせ", to: "/contact" }
       ]

@@ -47,6 +47,8 @@ export default {
         'すべて',
         'YC教育支援センター',
         'SC学生団体連合会本部',
+        'YC学生団体連合会横浜分室',
+        'vRSA運営チーム'
       ],
       category: [
         'すべて',
@@ -57,7 +59,7 @@ export default {
         '留学プログラム',
         '用具関係',
         '学生生活',
-        'サークル関係'
+        'サークル関係',
       ],
       currentlyAuthor: null,
       currentlyCategory: null,
