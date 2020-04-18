@@ -1,10 +1,10 @@
 <template>
   <div class="question-box">
-    <v-card>
+    <v-card @click="show = !show">
       <v-card-title>{{item.question}}</v-card-title>
       <v-card-subtitle>カテゴリ: {{item.category}} | 回答者: {{item.author}}</v-card-subtitle>
       <v-card-actions>
-        <v-btn icon @click="show = !show"><v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon></v-btn>
+        <v-btn icon><v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon></v-btn>
       </v-card-actions>
       <v-expand-transition>
         <div v-show="show">
